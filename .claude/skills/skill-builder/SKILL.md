@@ -316,6 +316,51 @@ Ask user where to save the skill:
 - Project-specific: `.claude/skills/[skill-name]/`
 - Personal: `~/.claude/skills/[skill-name]/`
 
+## Packaging for Claude Web
+
+When the user asks for a zip file to use with Claude web (claude.ai), create a properly structured zip:
+
+**Critical requirement**: SKILL.md must be at the **top level** of the zip, not nested in subdirectories.
+
+### Correct Structure:
+```
+skill-name.zip
+├── SKILL.md              ← Top level (required)
+├── supporting-file.md
+├── reference.md
+└── script.py
+```
+
+### ❌ Incorrect Structure (Don't do this):
+```
+skill-name.zip
+└── .claude/
+    └── skills/
+        └── skill-name/
+            └── SKILL.md   ← Nested (won't work!)
+```
+
+### How to Create Zip:
+
+```bash
+# Navigate to the skill directory
+cd /path/to/skill-name/
+
+# Create zip with files at top level
+zip -r skill-name.zip . -x ".*"
+
+# Verify structure (SKILL.md should be at root)
+unzip -l skill-name.zip
+```
+
+### Verification:
+
+Before providing the zip to the user, verify:
+- [ ] SKILL.md appears at the root level in `unzip -l` output
+- [ ] No nested `.claude/skills/` directories
+- [ ] All supporting files are at the top level
+- [ ] Zip file is named descriptively (e.g., `climbing-trainer.zip`)
+
 ## Validation Checklist
 
 Before finalizing, verify:
