@@ -71,7 +71,61 @@ Ideas for better validation or scaffolding?
 - New scaffolding options
 - Performance improvements
 
-### 5. Meta-Skill Improvements
+### 5. Evaluation Test Cases
+
+Found a gap in testing coverage?
+
+**Steps:**
+1. Identify untested scenario
+2. Add test case to `evaluations.json`
+3. Document expected behaviors
+4. Update EVALUATIONS.md if needed
+5. Run the test manually and document
+
+**Test case structure:**
+```json
+{
+  "id": "eval-###",
+  "name": "Descriptive test name",
+  "query": "What to ask Claude",
+  "expected_behaviors": [
+    "Specific behavior 1",
+    "Specific behavior 2"
+  ],
+  "anti_patterns_to_avoid": [
+    "Anti-pattern 1",
+    "Anti-pattern 2"
+  ]
+}
+```
+
+**Good test cases:**
+- Edge cases not currently tested
+- Common failure modes
+- Pattern-specific validations
+- Integration scenarios
+
+### 6. Blog Posts and Tutorials
+
+Want to share how you use the skill-builder?
+
+**Steps:**
+1. Write post in `docs/` directory
+2. Use markdown format
+3. Include working examples
+4. Add to docs/README.md
+5. Link from main README if relevant
+
+**Blog topics:**
+- Advanced skill techniques
+- Real-world case studies
+- Integration patterns
+- Best practices deep-dives
+- Troubleshooting guides
+
+**Example**: See `docs/linkedin-skilz-announcement.md`
+
+### 7. Meta-Skill Improvements
 
 Better ways to teach Claude about skills?
 
@@ -81,12 +135,14 @@ Better ways to teach Claude about skills?
 3. Update skill-builder/SKILL.md
 4. Test with various skill types
 5. Update supporting files if needed
+6. Run evaluation suite to ensure no regressions
 
 **Improvement areas:**
 - Additional patterns
 - Better explanations
 - More examples
 - New best practices
+- Improved progressive disclosure
 
 ## Contribution Guidelines
 
@@ -120,6 +176,10 @@ Better ways to teach Claude about skills?
 
    # For tools
    node tools/your-tool.js test-case
+
+   # For skill-builder changes - run evaluations
+   # See .claude/skills/skill-builder/EVALUATIONS.md for full guide
+   # Run each test case manually and verify expected behaviors
    ```
 
 5. **Commit with clear messages**

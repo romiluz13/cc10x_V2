@@ -1,5 +1,10 @@
 # Skilz - Claude Code Skill Builder
 
+![Production Ready](https://img.shields.io/badge/status-production--ready-green.svg)
+![Test Coverage](https://img.shields.io/badge/evaluations-12%20test%20cases-blue.svg)
+![Best Practices](https://img.shields.io/badge/best%20practices-compliant-brightgreen.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+
 **Automated skill builder for Claude Code** - Describe a skill you need, and Claude Code generates it following best practices automatically.
 
 ## What is This?
@@ -7,10 +12,11 @@
 Skilz is a **meta-repository** that teaches Claude Code how to write high-quality skills. It contains:
 
 1. **skill-builder skill** - A skill that Claude loads to learn how to write skills
-2. **Comprehensive templates** - 8 ready-to-use skill patterns
-3. **Complete examples** - Production-quality skills demonstrating best practices
-4. **Validation tools** - Automated checking of skill requirements
-5. **Full documentation** - Everything you need to understand skills
+2. **Comprehensive evaluations** - 12 test cases to validate skill quality
+3. **Comprehensive templates** - 8 ready-to-use skill patterns
+4. **Complete examples** - Production-quality skills demonstrating best practices
+5. **Validation tools** - Automated checking of skill requirements
+6. **Full documentation** - Everything you need to understand skills
 
 ## Quick Start
 
@@ -104,6 +110,8 @@ skilz/
 │   └── skills/
 │       └── skill-builder/           # THE META-SKILL
 │           ├── SKILL.md             # Main skill teaching Claude
+│           ├── EVALUATIONS.md       # Testing guide
+│           ├── evaluations.json     # 12 test cases
 │           ├── best-practices.md    # Core principles
 │           ├── structure-reference.md
 │           ├── patterns.md          # Pattern library
@@ -170,6 +178,16 @@ For multi-step tasks:
 - Provide checkbox checklists
 - Clear validation points
 - Validate → Fix → Repeat pattern
+
+### 5. Testing and Evaluation
+
+Comprehensive test suite ensures quality:
+- **12 evaluation test cases** covering all skill aspects
+- **Baseline comparison** to measure improvement
+- **Success criteria** (10/12 passing = 83%)
+- **Iteration guidance** for continuous improvement
+
+See `.claude/skills/skill-builder/EVALUATIONS.md` for complete testing guide.
 
 ## Usage Examples
 
