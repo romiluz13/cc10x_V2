@@ -340,3 +340,4 @@ Before finalizing, verify:
 - **[structure-reference.md](structure-reference.md)**: Technical specifications
 - **[patterns.md](patterns.md)**: Detailed pattern library
 - **[validation-rules.md](validation-rules.md)**: Complete validation requirements
+- **[EVALUATIONS.md](EVALUATIONS.md)**: Testing guide and evaluation test cases

@@ -1,5 +1,18 @@
 # Best Practices for Skill Authoring
 
+## Contents
+- [The Conciseness Principle](#the-conciseness-principle)
+- [Degrees of Freedom](#degrees-of-freedom)
+- [Progressive Disclosure](#progressive-disclosure)
+- [Workflows and Feedback Loops](#workflows-and-feedback-loops)
+- [Content Guidelines](#content-guidelines)
+- [Common Patterns](#common-patterns)
+- [Evaluation and Iteration](#evaluation-and-iteration)
+- [Anti-Patterns to Avoid](#anti-patterns-to-avoid)
+- [Skills with Executable Code](#skills-with-executable-code)
+
+---
+
 ## The Conciseness Principle
 
 The context window is shared across all Claude's knowledge. Every token in your skill competes with conversation history and other context.

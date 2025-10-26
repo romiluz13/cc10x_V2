@@ -1,5 +1,16 @@
 # Skill Structure Technical Reference
 
+## Contents
+- [YAML Frontmatter Specification](#yaml-frontmatter-specification)
+- [File Organization](#file-organization)
+- [File Path Requirements](#file-path-requirements)
+- [Content Organization Guidelines](#content-organization-guidelines)
+- [YAML Validation Rules](#yaml-validation-rules)
+- [Complete Valid Example](#complete-valid-example)
+- [Validation Checklist](#validation-checklist)
+
+---
+
 ## YAML Frontmatter Specification
 
 Every SKILL.md requires YAML frontmatter with specific fields and validation rules.

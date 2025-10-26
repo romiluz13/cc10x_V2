@@ -2,6 +2,25 @@
 
 Complete checklist for validating Claude Code skills before deployment.
 
+## Contents
+- [YAML Frontmatter Validation](#yaml-frontmatter-validation)
+- [File Structure Validation](#file-structure-validation)
+- [Content Quality Validation](#content-quality-validation)
+- [Progressive Disclosure Validation](#progressive-disclosure-validation)
+- [Workflow Validation](#workflow-validation)
+- [Script Validation (if skill includes scripts)](#script-validation-if-skill-includes-scripts)
+- [Pattern Validation](#pattern-validation)
+- [Security Validation](#security-validation)
+- [Anti-Pattern Detection](#anti-pattern-detection)
+- [Complete Validation Checklist](#complete-validation-checklist)
+- [Automated Validation](#automated-validation)
+- [Manual Review](#manual-review)
+- [Testing Checklist](#testing-checklist)
+- [Validation Tool Output](#validation-tool-output)
+- [Quick Reference](#quick-reference)
+
+---
+
 ## YAML Frontmatter Validation
 
 ### name Field

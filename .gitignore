@@ -10,3 +10,6 @@ coverage/
 *.swp
 *.swo
 *~
+
+# Private skills - not for public repo
+.claude/skills/climbing-training-builder/

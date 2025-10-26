@@ -2,6 +2,19 @@
 
 This document details common skill patterns and provides templates for each type.
 
+## Contents
+- [Pattern Selection Guide](#pattern-selection-guide)
+- [1. Basic Skill Pattern](#1-basic-skill-pattern)
+- [2. Analysis Skill Pattern](#2-analysis-skill-pattern)
+- [3. Generation Skill Pattern](#3-generation-skill-pattern)
+- [4. Workflow Skill Pattern](#4-workflow-skill-pattern)
+- [5. Tool-Restricted Skill Pattern](#5-tool-restricted-skill-pattern)
+- [6. Multi-File Skill Pattern](#6-multi-file-skill-pattern)
+- [7. Script-Based Skill Pattern](#7-script-based-skill-pattern)
+- [8. Validation Skill Pattern](#8-validation-skill-pattern)
+
+---
+
 ## Pattern Selection Guide
 
 | Use Case | Pattern | Complexity | Supporting Files |

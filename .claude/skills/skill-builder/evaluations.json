@@ -1,0 +1,275 @@
+{
+  "skill": "skill-builder",
+  "version": "1.0",
+  "description": "Evaluation test cases for the skill-builder skill",
+  "test_cases": [
+    {
+      "id": "eval-001",
+      "name": "Basic Skill Generation",
+      "query": "Create a skill for extracting text from PDF files using pdfplumber",
+      "expected_behaviors": [
+        "Generates SKILL.md file with valid YAML frontmatter",
+        "Name field is lowercase with hyphens only (e.g., 'pdf-text-extraction' or 'extracting-pdf-text')",
+        "Description is in third person and includes what the skill does and when to use it",
+        "Description includes trigger keywords like 'PDF', 'text extraction', 'pdfplumber'",
+        "SKILL.md body is under 500 lines",
+        "Includes example code showing pdfplumber usage",
+        "Does not over-explain what PDFs are or how libraries work",
+        "Uses forward slashes in any file paths",
+        "No time-sensitive information included"
+      ],
+      "anti_patterns_to_avoid": [
+        "Name contains uppercase letters, spaces, or underscores",
+        "Description uses first person ('I can help') or second person ('You can use')",
+        "Over-explains basic concepts Claude already knows",
+        "Includes unnecessary installation instructions for common packages",
+        "Uses Windows-style backslash paths"
+      ]
+    },
+    {
+      "id": "eval-002",
+      "name": "Multi-File Skill with Progressive Disclosure",
+      "query": "Create a skill for analyzing and processing Excel spreadsheets with extensive API documentation",
+      "expected_behaviors": [
+        "Generates SKILL.md as overview/table of contents",
+        "Creates separate reference files for detailed content (e.g., REFERENCE.md, EXAMPLES.md)",
+        "SKILL.md references supporting files using markdown links",
+        "All references are one level deep from SKILL.md (no nested references)",
+        "Supporting files >100 lines include table of contents at the top",
+        "SKILL.md stays under 500 lines by moving details to supporting files",
+        "File names are descriptive (not 'doc1.md' or 'file2.md')",
+        "Clear indication of when to read each supporting file"
+      ],
+      "anti_patterns_to_avoid": [
+        "Everything crammed into single SKILL.md file >500 lines",
+        "Deeply nested references (SKILL.md → advanced.md → details.md)",
+        "Supporting files without table of contents",
+        "Vague file names like 'misc.md' or 'temp.md'"
+      ]
+    },
+    {
+      "id": "eval-003",
+      "name": "Workflow Skill with Validation",
+      "query": "Create a skill for a multi-step database migration process that requires validation at each step",
+      "expected_behaviors": [
+        "Includes copy-able checklist with [ ] checkboxes for tracking progress",
+        "Clear sequential steps numbered and explained",
+        "Includes validation/verification steps after critical operations",
+        "Uses feedback loop pattern (run → validate → fix → repeat)",
+        "Provides specific commands or scripts to run at each step",
+        "Indicates which operations are fragile and require exact execution (low freedom)",
+        "Includes error handling guidance",
+        "Has validation checklist at the end"
+      ],
+      "anti_patterns_to_avoid": [
+        "No checklist for tracking multi-step workflow",
+        "Missing validation steps",
+        "No guidance on what to do if validation fails",
+        "Vague instructions without specific commands"
+      ]
+    },
+    {
+      "id": "eval-004",
+      "name": "Validation - Invalid Name",
+      "query": "Create a skill called 'PDF_Processor' for processing PDFs",
+      "expected_behaviors": [
+        "Recognizes that 'PDF_Processor' violates naming rules (contains uppercase and underscore)",
+        "Suggests corrected name like 'pdf-processor' or 'processing-pdfs'",
+        "Explains the naming rules: lowercase letters, numbers, and hyphens only",
+        "Uses the corrected name in the generated YAML frontmatter"
+      ],
+      "anti_patterns_to_avoid": [
+        "Accepts invalid name without correction",
+        "Generates YAML with invalid name field"
+      ]
+    },
+    {
+      "id": "eval-005",
+      "name": "Validation - Reserved Words",
+      "query": "Create a skill called 'claude-helper' for helping with code reviews",
+      "expected_behaviors": [
+        "Recognizes 'claude-helper' contains reserved word 'claude'",
+        "Suggests alternative name like 'code-review-helper' or 'reviewing-code'",
+        "Explains that 'anthropic' and 'claude' are reserved words",
+        "Uses valid name in generated skill"
+      ],
+      "anti_patterns_to_avoid": [
+        "Accepts name with reserved word",
+        "Generates skill with 'claude' in the name"
+      ]
+    },
+    {
+      "id": "eval-006",
+      "name": "Description Quality",
+      "query": "Create a skill for analyzing code quality",
+      "expected_behaviors": [
+        "Description written in third person (not 'I can' or 'You can')",
+        "Description includes WHAT the skill does (analyzes code quality)",
+        "Description includes WHEN to use it (when analyzing code, reviewing quality, etc.)",
+        "Description includes trigger keywords (code, quality, analysis, review, etc.)",
+        "Description is specific, not vague like 'Helps with code'",
+        "Description is under 1024 characters"
+      ],
+      "anti_patterns_to_avoid": [
+        "First person: 'I can help analyze your code'",
+        "Second person: 'You can use this to analyze code'",
+        "Vague: 'Helps with code'",
+        "No trigger keywords or usage context"
+      ]
+    },
+    {
+      "id": "eval-007",
+      "name": "Conciseness - Avoiding Over-Explanation",
+      "query": "Create a skill for working with JSON files",
+      "expected_behaviors": [
+        "Does not explain what JSON is or how it works",
+        "Does not explain basic programming concepts",
+        "Assumes Claude knows about JSON parsing libraries",
+        "Focuses on specific guidance, not general knowledge",
+        "Provides code examples without excessive explanation",
+        "SKILL.md body is concise (well under 500 lines for simple task)"
+      ],
+      "anti_patterns_to_avoid": [
+        "Lengthy explanation of JSON format",
+        "Explaining what libraries are or how to install them",
+        "Over-documenting basic concepts Claude already knows"
+      ]
+    },
+    {
+      "id": "eval-008",
+      "name": "Pattern Selection - Template Pattern",
+      "query": "Create a skill for generating standardized test reports",
+      "expected_behaviors": [
+        "Uses template pattern with example output structure",
+        "Shows concrete example with filled-in sections",
+        "Indicates level of strictness (ALWAYS use this template vs. adapt as needed)",
+        "Template uses markdown format",
+        "Clear section headers and structure"
+      ],
+      "anti_patterns_to_avoid": [
+        "Abstract description without concrete template",
+        "No example showing what output should look like"
+      ]
+    },
+    {
+      "id": "eval-009",
+      "name": "Pattern Selection - Examples Pattern",
+      "query": "Create a skill for writing git commit messages following conventional commits",
+      "expected_behaviors": [
+        "Uses examples pattern with input/output pairs",
+        "Provides multiple examples (at least 2-3) showing different scenarios",
+        "Examples are concrete, not abstract",
+        "Shows both good examples and explains the pattern",
+        "Examples demonstrate variety (feat, fix, chore, etc.)"
+      ],
+      "anti_patterns_to_avoid": [
+        "Single example only",
+        "Abstract explanation without concrete examples",
+        "Examples that don't show variety"
+      ]
+    },
+    {
+      "id": "eval-010",
+      "name": "Degree of Freedom - Low Freedom for Fragile Operations",
+      "query": "Create a skill for running a specific database migration that must be executed in exact sequence",
+      "expected_behaviors": [
+        "Provides exact commands with specific flags",
+        "Uses low freedom approach with explicit instructions",
+        "Includes warning: 'Do not modify this command' or 'Run exactly as shown'",
+        "Explains why precision is required (fragile operation, consistency critical)",
+        "No optional parameters or variations suggested"
+      ],
+      "anti_patterns_to_avoid": [
+        "Providing multiple options for fragile operations",
+        "Leaving critical parameters configurable without guidance",
+        "High freedom approach for operations that must be exact"
+      ]
+    },
+    {
+      "id": "eval-011",
+      "name": "Executable Scripts - When to Provide",
+      "query": "Create a skill for validating and processing XML files with complex validation rules",
+      "expected_behaviors": [
+        "Recognizes that validation is deterministic and error-prone",
+        "Suggests providing a validation script rather than asking Claude to write one",
+        "Creates scripts/ directory with utility scripts",
+        "Provides clear commands for executing scripts",
+        "Explains when to execute vs. when to read scripts as reference",
+        "Scripts include error handling"
+      ],
+      "anti_patterns_to_avoid": [
+        "Expecting Claude to generate complex validation code each time",
+        "No utility scripts for deterministic operations",
+        "Scripts without error handling"
+      ]
+    },
+    {
+      "id": "eval-012",
+      "name": "Complete Skill Validation",
+      "query": "Create a skill for processing images with multiple operations (resize, crop, filter)",
+      "expected_behaviors": [
+        "Valid YAML frontmatter with all required fields",
+        "Name: lowercase, hyphens, under 64 chars, no reserved words",
+        "Description: third person, specific, includes triggers, under 1024 chars",
+        "SKILL.md body under 500 lines",
+        "Forward slashes in all paths",
+        "References one level deep",
+        "Consistent terminology throughout",
+        "No time-sensitive information",
+        "Validation checklist included",
+        "Appropriate pattern chosen for use case"
+      ],
+      "validation_checklist": [
+        "Name is lowercase, hyphens only, max 64 chars",
+        "Description is specific with trigger keywords, max 1024 chars",
+        "Description written in third person",
+        "SKILL.md body under 500 lines",
+        "Forward slashes in all file paths",
+        "References one level deep from SKILL.md",
+        "Consistent terminology throughout",
+        "Concise (no over-explaining)",
+        "Appropriate degree of freedom for use case",
+        "Workflows have clear steps if multi-step",
+        "Examples are concrete if pattern-based",
+        "No time-sensitive information",
+        "No Windows-style paths",
+        "No reserved words in name"
+      ]
+    }
+  ],
+  "baseline_test": {
+    "description": "Test Claude's ability to create skills WITHOUT the skill-builder skill loaded",
+    "query": "Create a Claude Code skill for processing PDF files",
+    "common_issues_without_skill": [
+      "May not know proper YAML frontmatter format",
+      "May not follow naming conventions (lowercase, hyphens)",
+      "May write description in first or second person",
+      "May not understand progressive disclosure pattern",
+      "May not know to keep SKILL.md under 500 lines",
+      "May not include table of contents in long files",
+      "May not follow validation checklist",
+      "May over-explain concepts Claude already knows"
+    ]
+  },
+  "success_criteria": {
+    "passing_threshold": "Skill passes 10 out of 12 test cases",
+    "critical_validations": [
+      "eval-001: Basic skill generation must work",
+      "eval-004: Must catch invalid names",
+      "eval-006: Must generate proper descriptions",
+      "eval-012: Complete validation must pass"
+    ],
+    "improvement_areas_if_failing": [
+      "If eval-002 fails: Improve progressive disclosure guidance",
+      "If eval-003 fails: Improve workflow pattern examples",
+      "If eval-007 fails: Emphasize conciseness principle more",
+      "If eval-008/009 fail: Improve pattern selection guidance",
+      "If eval-010 fails: Clarify degrees of freedom examples"
+    ]
+  },
+  "iteration_guidance": {
+    "if_baseline_better_than_skill": "Skill is adding too much overhead or confusing instructions",
+    "if_skill_only_slightly_better": "Skill needs more concrete examples and clearer patterns",
+    "if_skill_much_better": "Skill is providing value; iterate on edge cases and pattern selection"
+  }
+}
