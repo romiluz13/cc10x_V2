@@ -1,0 +1,28 @@
+{
+  "name": "skilz",
+  "version": "1.0.0",
+  "description": "Automated skill builder for Claude Code - describe a skill and get a best-practice-compliant implementation",
+  "main": "index.js",
+  "scripts": {
+    "validate": "node tools/validate-skill.js",
+    "scaffold": "node tools/scaffold-skill.js",
+    "lint": "node tools/lint-skill.js",
+    "test": "node tools/test-skill.js"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "skills",
+    "agent-skills",
+    "ai",
+    "automation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "yaml": "^2.3.4",
+    "chalk": "^4.1.2",
+    "inquirer": "^8.2.5",
+    "commander": "^11.1.0"
+  }
+}
