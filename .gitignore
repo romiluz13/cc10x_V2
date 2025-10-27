@@ -15,15 +15,10 @@ coverage/
 .claude/settings.local.json
 .claude/memory/
 
-# Skilz framework (this is CC10x only)
-.claude/skills/skill-builder/
-docs/
-examples/
-templates/
-tools/
+# Archived Skilz framework files (local only)
+archive/
 
 # Development/draft materials
-inspiration/
 templates/intelligent-orchestrator/
 
 # Private skills

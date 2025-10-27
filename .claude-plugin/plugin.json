@@ -1,0 +1,25 @@
+{
+  "name": "cc10x",
+  "version": "1.0.0",
+  "description": "Complete lifecycle automation for Claude Code: Plan → Build → Review → Deploy with human checkpoints and parallel execution",
+  "author": {
+    "name": "Rom Iluz",
+    "email": "rom@iluz.net"
+  },
+  "homepage": "https://github.com/romiluz13/cc10x_v2",
+  "repository": "https://github.com/romiluz13/cc10x_v2",
+  "license": "MIT",
+  "keywords": [
+    "development",
+    "lifecycle",
+    "tdd",
+    "code-review",
+    "deployment",
+    "risk-analysis",
+    "orchestrator",
+    "planning",
+    "building",
+    "reviewing"
+  ],
+  "skills": "./.claude/skills/"
+}

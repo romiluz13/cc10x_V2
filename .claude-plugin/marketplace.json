@@ -1,0 +1,36 @@
+{
+  "name": "cc10x",
+  "owner": {
+    "name": "Rom Iluz",
+    "email": "rom@iluz.net"
+  },
+  "metadata": {
+    "description": "Complete Development Lifecycle System - Systematic 10x development with quality gates at every phase",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "cc10x",
+      "source": ".",
+      "description": "Complete lifecycle automation for Claude Code: Plan → Build → Review → Deploy with human checkpoints and parallel execution",
+      "version": "1.0.0",
+      "author": {
+        "name": "Rom Iluz",
+        "email": "rom@iluz.net"
+      },
+      "homepage": "https://github.com/romiluz13/cc10x_v2",
+      "repository": "https://github.com/romiluz13/cc10x_v2",
+      "license": "MIT",
+      "keywords": [
+        "development",
+        "lifecycle",
+        "tdd",
+        "code-review",
+        "deployment",
+        "risk-analysis",
+        "orchestrator"
+      ],
+      "category": "productivity"
+    }
+  ]
+}
