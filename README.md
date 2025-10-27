@@ -28,9 +28,9 @@ CC10x is a development lifecycle orchestrator that coordinates specialized workf
 ### Install
 
 ```bash
-git clone https://github.com/romiluz13/cc10x_v2.git
-cd cc10x_v2
-npm install
+# In Claude Code, run these commands:
+/plugin marketplace add romiluz13/cc10x_v2
+/plugin install cc10x@cc10x
 ```
 
 ### Use
@@ -515,10 +515,12 @@ MIT License - See LICENSE file
 ### Installation
 
 ```bash
-git clone https://github.com/romiluz13/cc10x_v2.git
-cd cc10x_v2
-npm install
+# In Claude Code, run these commands:
+/plugin marketplace add romiluz13/cc10x_v2
+/plugin install cc10x@cc10x
 ```
+
+That's it! CC10x skills are now available in your Claude Code session.
 
 ### First Run
 
