@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "cc10x",
-      "source": ".",
+      "source": "./",
       "description": "Complete lifecycle automation for Claude Code: Plan → Build → Review → Deploy with human checkpoints and parallel execution",
       "version": "1.0.0",
       "author": {
