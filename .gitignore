@@ -11,5 +11,26 @@ coverage/
 *.swo
 *~
 
-# Private skills - not for public repo
+# Local Claude settings
+.claude/settings.local.json
+.claude/memory/
+
+# Skilz framework (this is CC10x only)
+.claude/skills/skill-builder/
+docs/
+examples/
+templates/
+tools/
+
+# Development/draft materials
+inspiration/
+templates/intelligent-orchestrator/
+
+# Private skills
 .claude/skills/climbing-training-builder/
+
+# Temporary files
+*.tmp
+*.temp
+*.draft.md
+*.wip.md
